@@ -1,0 +1,131 @@
+/* ============================================================
+   CerradoNews — base.css
+   Reset, body, utilitários tipográficos e placeholders de imagem
+   ============================================================ */
+
+/* ── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--areia);
+  color: var(--carvao);
+  line-height: 1.62;
+  overflow-x: hidden;
+  /* Textura sutil de papel (ruído SVG ~2.5% opacidade) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(46,110,134,.4);
+}
+a:hover { text-decoration-color: var(--link); }
+
+img, svg { display: block; max-width: 100%; }
+button    { cursor: pointer; font-family: var(--font-ui); border: none; background: none; }
+ul, ol    { list-style: none; }
+
+/* ── Utilitários tipográficos ──────────────────────────────── */
+.kicker {
+  font-family: var(--font-ui);
+  font-size: var(--text-overline);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terra-vermelha);
+  line-height: 1.2;
+  text-decoration: none;
+  display: block;
+}
+
+.byline {
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+  font-weight: 600;
+  color: var(--fg1);
+  text-decoration: none;
+}
+
+.dateline {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  text-decoration: none;
+}
+
+/* ── Placeholders de imagem (gradientes do cerrado) ──────── */
+.ph-1 { background: linear-gradient(135deg, #2A4030 0%, #BE8C32 100%); }
+.ph-2 { background: linear-gradient(135deg, #A4432B 0%, #BE8C32 100%); }
+.ph-3 { background: linear-gradient(135deg, #2E6E86 0%, #35513B 100%); }
+.ph-4 { background: linear-gradient(135deg, #BE8C32 0%, #A4432B 100%); }
+.ph-5 { background: linear-gradient(135deg, #35513B 0%, #2E6E86 100%); }
+.ph-6 { background: linear-gradient(135deg, #6B665C 0%, #262320 100%); }
+.ph-7 { background: linear-gradient(135deg, #A4432B 0%, #35513B 100%); }
+.ph-8 { background: linear-gradient(135deg, #C8851B 0%, #35513B 100%); }
+
+/* ── Animações globais ─────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .4; transform: scale(.7); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Spinner de loading ────────────────────────────────────── */
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255,255,255,.1);
+  border-top-color: var(--dourado-baru);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  flex-direction: column;
+  gap: var(--space-3);
+  color: rgba(255,255,255,.4);
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+}
+
+/* ── Acessibilidade ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,429 @@
+/* ============================================================
+   CerradoNews — sections.css
+   Estilos de cada seção da homepage
+   ============================================================ */
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1px;
+  background: var(--linha);
+  border: 1px solid var(--linha);
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin: var(--space-6) 0;
+  animation: fadeUp 0.6s var(--ease) both;
+}
+
+.hero__main {
+  position: relative;
+  overflow: hidden;
+  background: var(--carvao-2);
+  cursor: pointer;
+}
+
+.hero__main-img {
+  width: 100%;
+  height: 520px;
+  display: block;
+  transition: transform 0.4s var(--ease);
+}
+.hero__main:hover .hero__main-img { transform: scale(1.04); }
+
+.hero__main-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(38,35,32,.94) 0%,
+    rgba(38,35,32,.4) 55%,
+    transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-7) var(--space-6) var(--space-6);
+  gap: var(--space-2);
+}
+
+.hero__main-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.hero__main-lide {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: 300;
+  line-height: 1.55;
+  color: rgba(255,255,255,.72);
+}
+
+.hero__main-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+.hero__main-meta .byline  { color: rgba(255,255,255,.85); }
+.hero__main-meta .dateline { color: rgba(255,255,255,.5); }
+
+.hero__sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--areia-escura);
+}
+
+.hero__side-card {
+  flex: 1;
+  padding: var(--space-5);
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid var(--linha);
+  transition: border-left-color 0.15s var(--ease), background 0.15s var(--ease);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.hero__side-card:last-child { border-bottom: none; }
+.hero__side-card:hover {
+  border-left-color: var(--dourado-baru);
+  background: var(--areia-clara);
+}
+
+.hero__side-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--fg1);
+  transition: color 0.15s var(--ease);
+}
+.hero__side-card:hover .hero__side-title { color: var(--verde-cerrado); }
+
+.hero__side-lide {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: 300;
+  color: var(--fg2);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ── News Grid ────────────────────────────────────────────── */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--col-gap);
+  margin-bottom: var(--space-7);
+  animation: fadeUp 0.6s 0.1s var(--ease) both;
+}
+
+/* ── Featured Strip ───────────────────────────────────────── */
+.featured-strip {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--col-gap);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+  margin-bottom: var(--space-7);
+  animation: fadeUp 0.6s 0.2s var(--ease) both;
+}
+
+.featured__big {
+  display: flex;
+  gap: var(--space-5);
+  cursor: pointer;
+}
+.featured__big:hover .featured__big-title { color: var(--verde-cerrado); }
+
+.featured__big-img {
+  width: 280px;
+  height: 196px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.featured__big-img div {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s var(--ease);
+}
+.featured__big:hover .featured__big-img div { transform: scale(1.04); }
+
+.featured__big-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.featured__big-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--fg1);
+  transition: color 0.15s var(--ease);
+}
+
+.featured__big-lide {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 300;
+  color: var(--fg2);
+  line-height: 1.6;
+}
+
+.featured__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured__list-item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--linha);
+  cursor: pointer;
+}
+.featured__list-item:first-child { padding-top: 0; }
+.featured__list-item:last-child  { border-bottom: none; padding-bottom: 0; }
+.featured__list-item:hover .featured__list-title { color: var(--verde-cerrado); }
+
+.featured__list-img {
+  width: 80px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.featured__list-img div {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s var(--ease);
+}
+.featured__list-item:hover .featured__list-img div { transform: scale(1.04); }
+
+.featured__list-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.featured__list-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h6);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--fg1);
+  transition: color 0.15s var(--ease);
+}
+
+/* ── Tirinhas Section ─────────────────────────────────────── */
+.tirinhas-section {
+  background: var(--areia-escura);
+  padding: var(--space-7) 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+.tirinhas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--col-gap);
+}
+
+/* ── Widgets Row ──────────────────────────────────────────── */
+.widgets-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--col-gap);
+  padding: var(--space-7) 0;
+}
+
+/* ── Cultura Grid ─────────────────────────────────────────── */
+.cultura-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap);
+  margin-bottom: var(--space-7);
+}
+
+.cultura-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+}
+
+.cultura-card__img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s var(--ease);
+}
+.cultura-card:hover .cultura-card__img { transform: scale(1.05); }
+
+.cultura-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(38,35,32,.92) 0%,
+    rgba(38,35,32,.3) 55%,
+    transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-4);
+  gap: var(--space-2);
+}
+
+.cultura-card__tag {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--dourado-baru);
+  color: var(--carvao);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.cultura-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  font-style: italic;
+}
+
+/* ── Agronegócio + Sidebar ────────────────────────────────── */
+.agro-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-8);
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--linha);
+  animation: fadeUp 0.6s 0.25s var(--ease) both;
+}
+
+.agro-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+  cursor: pointer;
+}
+.agro-hero:hover .agro-hero__title { color: var(--verde-cerrado); }
+
+.agro-hero__img {
+  border-radius: var(--radius-md);
+  aspect-ratio: 4/3;
+  transition: transform 0.4s var(--ease);
+}
+.agro-hero:hover .agro-hero__img { transform: scale(1.02); }
+
+.agro-hero__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.agro-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--fg1);
+  transition: color 0.15s var(--ease);
+}
+
+.agro-hero__lide {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: 300;
+  color: var(--fg2);
+  line-height: 1.6;
+}
+
+.agro-list { display: flex; flex-direction: column; }
+
+.agro-list__item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--linha);
+  cursor: pointer;
+}
+.agro-list__item:hover .agro-list__title { color: var(--verde-cerrado); }
+
+.agro-list__img {
+  border-radius: var(--radius-sm);
+  aspect-ratio: 4/3;
+  transition: transform 0.4s var(--ease);
+}
+.agro-list__item:hover .agro-list__img { transform: scale(1.03); }
+
+.agro-list__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.agro-list__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--fg1);
+  transition: color 0.15s var(--ease);
+}
+
+.agro-list__lide {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: 300;
+  color: var(--fg2);
+  line-height: 1.5;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ── Opinião Section ──────────────────────────────────────── */
+.opiniao-section {
+  background: var(--verde-cerrado);
+  padding: var(--space-7) 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  animation: fadeUp 0.6s 0.3s var(--ease) both;
+}
+
+.opiniao-section .section-heading { border-bottom-color: rgba(255,255,255,.2); }
+.opiniao-section .section-heading__title { color: rgba(255,255,255,.9); }
+.opiniao-section .section-heading__rule  { background: rgba(255,255,255,.15); }
+.opiniao-section .section-heading__more  {
+  color: var(--dourado-baru);
+  border-color: var(--dourado-baru);
+}
+
+.opiniao-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--col-gap);
+}

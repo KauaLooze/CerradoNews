@@ -1,0 +1,359 @@
+/* ============================================================
+   CerradoNews — layout.css
+   Container, seção heading, ticker, masthead, navbar e footer
+   ============================================================ */
+
+/* ── Container ────────────────────────────────────────────── */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.hairline {
+  border: none;
+  border-top: 1px solid var(--linha);
+}
+
+/* ── Section Heading ──────────────────────────────────────── */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--carvao);
+}
+
+.section-heading__title {
+  font-family: var(--font-ui);
+  font-size: var(--text-overline);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--carvao);
+  white-space: nowrap;
+}
+
+.section-heading__rule {
+  flex: 1;
+  height: 1px;
+  background: var(--linha);
+}
+
+.section-heading__more {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--verde-cerrado);
+  text-decoration: none;
+  border-bottom: 1px solid var(--verde-cerrado);
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.section-heading__more:hover {
+  color: var(--dourado-baru);
+  border-color: var(--dourado-baru);
+  text-decoration: none;
+}
+
+/* ── Ticker / Plantão ─────────────────────────────────────── */
+.ticker {
+  background: var(--erro);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  overflow: hidden;
+  position: relative;
+  z-index: 200;
+}
+
+.ticker__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(0,0,0,.25);
+  padding: 0 var(--space-4);
+  height: 100%;
+  flex-shrink: 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-overline);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ticker__badge {
+  background: var(--dourado-baru);
+  color: var(--carvao);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.ticker__live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  animation: pulse-dot 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.ticker__track-wrap { overflow: hidden; flex: 1; }
+
+.ticker__track {
+  display: flex;
+  gap: 60px;
+  animation: marquee 40s linear infinite;
+  white-space: nowrap;
+}
+.ticker__track:hover { animation-play-state: paused; }
+
+.ticker__track span {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  padding: 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.ticker__track span::before {
+  content: '◆';
+  font-size: 0.5rem;
+  color: var(--dourado-baru);
+}
+
+/* ── Masthead ─────────────────────────────────────────────── */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--areia);
+  border-bottom: 1px solid var(--linha);
+  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.masthead.scrolled {
+  background: rgba(246,241,231,.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+}
+
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  gap: var(--space-5);
+}
+
+.masthead__brand {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.masthead__logotype {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+.masthead__logotype em     { font-style: normal; color: var(--verde-cerrado); }
+.masthead__logotype strong { font-style: normal; color: var(--dourado-baru); font-weight: 700; }
+
+.masthead__tagline {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  color: var(--fumaca);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.masthead__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.masthead__date {
+  white-space: nowrap;
+}
+
+.masthead__search {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--linha);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+.masthead__search:focus-within {
+  border-color: var(--destaque);
+  box-shadow: 0 0 0 3px var(--destaque-bg);
+}
+
+.masthead__search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+  color: var(--fg1);
+  width: 200px;
+}
+.masthead__search input::placeholder { color: var(--fg3); }
+
+.masthead__search button {
+  padding: var(--space-2) var(--space-3);
+  color: var(--fumaca);
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+}
+.masthead__search button:hover { color: var(--verde-cerrado); }
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.navbar { background: var(--verde-cerrado); }
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.navbar__inner::-webkit-scrollbar { display: none; }
+
+.navbar__link {
+  font-family: var(--font-ui);
+  font-size: var(--text-overline);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  text-decoration: none;
+  padding: var(--space-4) var(--space-4);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+  display: block;
+}
+.navbar__link:hover,
+.navbar__link.active {
+  color: #fff;
+  border-bottom-color: var(--dourado-baru);
+  text-decoration: none;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.site-footer {
+  background: var(--carvao);
+  padding: var(--space-7) 0 0;
+}
+
+.footer-inner { }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-8);
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.footer-brand__logo {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+.footer-brand__logo em     { font-style: normal; color: rgba(255,255,255,.7); }
+.footer-brand__logo strong { font-style: normal; color: var(--dourado-baru); }
+
+.footer-brand__about {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: 300;
+  color: rgba(255,255,255,.42);
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.45);
+  transition: all 0.15s var(--ease);
+  cursor: pointer;
+}
+.social-btn:hover {
+  background: var(--dourado-baru);
+  border-color: var(--dourado-baru);
+  color: var(--carvao);
+}
+
+.footer-col__title {
+  font-family: var(--font-ui);
+  font-size: var(--text-overline);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dourado-baru);
+  margin-bottom: var(--space-4);
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-col ul li a {
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+  transition: color 0.15s var(--ease);
+}
+.footer-col ul li a:hover {
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-5) 0;
+}
+.footer-bottom span {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  color: rgba(255,255,255,.22);
+}

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CerradoNews — O Jornal do Coração do Brasil</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,600;1,6..72,700&family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,600;0,75..125,700;1,75..125,400&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       1. TICKER / PLANTÃO
+       ============================================================ -->
+  <div class="ticker" role="marquee" aria-live="polite">
+    <div class="ticker__label">
+      <div class="ticker__live-dot" aria-hidden="true"></div>
+      Plantão
+      <span class="ticker__badge">Ao Vivo</span>
+    </div>
+    <div class="ticker__track-wrap">
+      <div class="ticker__track" id="ticker-track">
+        <span>Pantanal registra florescimento recorde após chuvas de março, dizem pesquisadores da UFMT</span>
+        <span>Soja do Mato Grosso bate marca histórica de produtividade com nova técnica de plantio direto</span>
+        <span>Governo de Goiás anuncia pacote de R$ 2,4 bi para infraestrutura do interior do estado</span>
+        <span>Brasília sedia Fórum Nacional de Sustentabilidade com delegados de todos os 26 estados</span>
+        <span>Festival de Cultura Popular reúne 12 povos indígenas do Cerrado em Campo Grande</span>
+        <span>Cuiabá registra temperatura de 42°C nesta terça-feira, novo recorde para o mês de junho</span>
+        <!-- Duplicates for seamless loop -->
+        <span>Pantanal registra florescimento recorde após chuvas de março, dizem pesquisadores da UFMT</span>
+        <span>Soja do Mato Grosso bate marca histórica de produtividade com nova técnica de plantio direto</span>
+        <span>Governo de Goiás anuncia pacote de R$ 2,4 bi para infraestrutura do interior do estado</span>
+        <span>Brasília sedia Fórum Nacional de Sustentabilidade com delegados de todos os 26 estados</span>
+        <span>Festival de Cultura Popular reúne 12 povos indígenas do Cerrado em Campo Grande</span>
+        <span>Cuiabá registra temperatura de 42°C nesta terça-feira, novo recorde para o mês de junho</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. MASTHEAD
+       ============================================================ -->
+  <header class="masthead" id="masthead">
+    <div class="masthead__inner container">
+      <a href="index.html" class="masthead__brand" aria-label="CerradoNews — página inicial">
+        <div class="masthead__logotype"><em>Cerrado</em><strong>News</strong></div>
+        <div class="masthead__tagline">O Jornal do Coração do Brasil</div>
+      </a>
+      <div class="masthead__right">
+        <span class="masthead__date dateline" id="current-date"></span>
+        <div class="masthead__search" role="search">
+          <input type="search" placeholder="Buscar notícias…" aria-label="Buscar notícias" />
+          <button aria-label="Executar busca">
+            <i data-lucide="search" style="width:16px;height:16px;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       3. NAVBAR
+       ============================================================ -->
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="navbar__inner container">
+      <a href="#"          class="navbar__link active">Início</a>
+      <a href="#noticias"  class="navbar__link">Notícias</a>
+      <a href="#agro"      class="navbar__link">Agronegócio</a>
+      <a href="#"          class="navbar__link">Política</a>
+      <a href="#cultura"   class="navbar__link">Cultura</a>
+      <a href="#tirinhas"  class="navbar__link">Tirinhas</a>
+      <a href="#tempo"     class="navbar__link">Tempo</a>
+      <a href="#cambio"    class="navbar__link">Câmbio</a>
+      <a href="#"          class="navbar__link">Esportes</a>
+      <a href="#opiniao"   class="navbar__link">Opinião</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main>
+    <div class="container">
+
+      <!-- ========== 4. HERO ========== -->
+      <section class="hero" aria-label="Notícia principal">
+        <article class="hero__main">
+          <div class="hero__main-img ph-1" role="img" aria-label="Pantanal em flor"></div>
+          <div class="hero__main-overlay">
+            <span class="kicker">Meio Ambiente</span>
+            <h1 class="hero__main-title">Pantanal registra maior florescimento em duas décadas após chuvas históricas do trimestre</h1>
+            <p class="hero__main-lide">Pesquisadores da UFMT documentaram o retorno de espécies que não eram vistas desde 2004 na região noroeste do bioma, em sinal de recuperação ambiental sem precedentes na última geração</p>
+            <div class="hero__main-meta">
+              <span class="byline">Mariana Figueiredo</span>
+              <span class="dateline">02 jun 2026 · 6 min</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero__sidebar">
+          <article class="hero__side-card">
+            <span class="kicker">Agronegócio</span>
+            <h2 class="hero__side-title">Soja do MT bate recorde histórico de produtividade com nova técnica de plantio direto</h2>
+            <p class="hero__side-lide">Cooperativas do Vale do Teles Pires relatam ganho de 18% na produção em relação à safra anterior.</p>
+            <span class="dateline">Redação · Há 1h</span>
+          </article>
+          <article class="hero__side-card">
+            <span class="kicker">Política</span>
+            <h2 class="hero__side-title">Governo de Goiás anuncia pacote de R$ 2,4 bi para infraestrutura do interior</h2>
+            <p class="hero__side-lide">Obras contemplam 48 municípios com saneamento, estradas vicinais e pontes sobre rios do Cerrado.</p>
+            <span class="dateline">Correspondente Goiânia · Há 3h</span>
+          </article>
+          <article class="hero__side-card">
+            <span class="kicker">Cultura</span>
+            <h2 class="hero__side-title">Festa Junina de Campo Grande reúne 400 mil visitantes e consolida tradição regional</h2>
+            <p class="hero__side-lide">Evento destaca danças, comidas típicas do Cerrado e quadrilhas com temática pantaneira.</p>
+            <span class="dateline">Ana Borges · Há 5h</span>
+          </article>
+        </aside>
+      </section>
+
+      <!-- ========== 5. ÚLTIMAS NOTÍCIAS ========== -->
+      <section id="noticias" aria-label="Últimas notícias">
+        <div class="section-heading">
+          <span class="section-heading__title">Últimas Notícias</span>
+          <div class="section-heading__rule"></div>
+          <a href="#" class="section-heading__more">Ver todas</a>
+        </div>
+        <div class="news-grid">
+
+          <article class="news-card">
+            <div class="news-card__img-wrap">
+              <div class="news-card__img ph-2"></div>
+            </div>
+            <div class="news-card__body">
+              <span class="kicker">Fauna</span>
+              <h3 class="news-card__title">Projeto de monitoramento de jacarés usa IA para rastrear 1.200 animais no Pantanal</h3>
+              <p class="news-card__lide">Sistema de reconhecimento facial para répteis desenvolvido em parceria com universidades europeias. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <div class="news-card__meta">
+                <span class="byline">Carlos Meireles</span>
+                <span class="dateline">01 jun 2026</span>
+                <span class="dateline">4 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__img-wrap">
+              <div class="news-card__img ph-3"></div>
+            </div>
+            <div class="news-card__body">
+              <span class="kicker">Economia</span>
+              <h3 class="news-card__title">Cooperativa de Rondonópolis exporta primeiro lote de café do Cerrado com certificação orgânica</h3>
+              <p class="news-card__lide">Produto alcança mercados na Alemanha e no Japão com preço 40% acima da commodity tradicional. Sed do eiusmod tempor incididunt ut labore.</p>
+              <div class="news-card__meta">
+                <span class="byline">Fernanda Lopes</span>
+                <span class="dateline">01 jun 2026</span>
+                <span class="dateline">3 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__img-wrap">
+              <div class="news-card__img ph-4"></div>
+            </div>
+            <div class="news-card__body">
+              <span class="kicker">Brasília</span>
+              <h3 class="news-card__title">Obras de modernização do Eixo Monumental têm prazo e orçamento revisados pelo GDF</h3>
+              <p class="news-card__lide">Secretaria de Obras prevê conclusão antes das comemorações dos 70 anos da capital federal. Ut labore et dolore magna aliqua ut enim.</p>
+              <div class="news-card__meta">
+                <span class="byline">Paulo Drummond</span>
+                <span class="dateline">31 mai 2026</span>
+                <span class="dateline">5 min</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ========== 6. DESTAQUE ========== -->
+      <section aria-label="Destaque editorial">
+        <div class="section-heading">
+          <span class="section-heading__title">Destaque</span>
+          <div class="section-heading__rule"></div>
+        </div>
+        <div class="featured-strip">
+          <article class="featured__big">
+            <div class="featured__big-img">
+              <div class="ph-5"></div>
+            </div>
+            <div class="featured__big-content">
+              <span class="kicker">Turismo</span>
+              <h2 class="featured__big-title">Chapada dos Guimarães bate recorde de visitantes e exige novo plano de gestão sustentável</h2>
+              <p class="featured__big-lide">O parque nacional recebeu mais de 380 mil turistas no primeiro semestre, colocando pressão sobre os serviços locais e os ecossistemas sensíveis da região. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+              <div class="news-card__meta" style="margin-top:auto;">
+                <span class="byline">Rodrigo Veiga</span>
+                <span class="dateline">30 mai 2026 · 7 min</span>
+              </div>
+            </div>
+          </article>
+          <aside class="featured__list">
+            <article class="featured__list-item">
+              <div class="featured__list-img"><div class="ph-6"></div></div>
+              <div class="featured__list-content">
+                <span class="kicker" style="font-size:0.6rem;">Cultura</span>
+                <h3 class="featured__list-title">Viola de cocho: instrumento símbolo do MT ganha escola gratuita em Cuiabá</h3>
+                <span class="dateline">30 mai 2026</span>
+              </div>
+            </article>
+            <article class="featured__list-item">
+              <div class="featured__list-img"><div class="ph-7"></div></div>
+              <div class="featured__list-content">
+                <span class="kicker" style="font-size:0.6rem;">Infraestrutura</span>
+                <h3 class="featured__list-title">Ferrovia Norte-Sul conectará Goiás ao Porto de Santos com nova ramificação aprovada</h3>
+                <span class="dateline">30 mai 2026</span>
+              </div>
+            </article>
+            <article class="featured__list-item">
+              <div class="featured__list-img"><div class="ph-8"></div></div>
+              <div class="featured__list-content">
+                <span class="kicker" style="font-size:0.6rem;">Meio Ambiente</span>
+                <h3 class="featured__list-title">Rio Araguaia tem menor nível em 15 anos e preocupa pescadores do norte goiano</h3>
+                <span class="dateline">29 mai 2026</span>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+    </div><!-- /container -->
+
+    <!-- ========== 7. TIRINHAS ========== -->
+    <section id="tirinhas" class="tirinhas-section" aria-label="Tirinhas do Cerrado">
+      <div class="tirinhas-inner container">
+        <div class="section-heading">
+          <span class="section-heading__title">Tirinhas do Cerrado</span>
+          <div class="section-heading__rule"></div>
+          <a href="#" class="section-heading__more">Ver todas</a>
+        </div>
+        <div class="tirinhas-grid">
+
+          <div class="tirinha-card">
+            <div class="tirinha-panels">
+              <div class="tirinha-panel">
+                <div class="tirinha-fig">🌵</div>
+                <div class="tirinha-bubble">Hoje choveu! Finalmente!</div>
+              </div>
+              <div class="tirinha-panel tirinha-panel--alt">
+                <div class="tirinha-fig">🌿</div>
+                <div class="tirinha-bubble">Só 3mm… aqui isso é "chuva de parar"?</div>
+              </div>
+              <div class="tirinha-panel tirinha-panel--alt2">
+                <div class="tirinha-fig">☀️</div>
+                <div class="tirinha-bubble">Bem-vindos ao Centro-Oeste!</div>
+              </div>
+            </div>
+            <div class="tirinha-meta">
+              <div>
+                <div class="tirinha-meta__title">Cerrado de Verdade</div>
+                <div class="tirinha-meta__author">por Zé do Buriti</div>
+              </div>
+              <span class="tirinha-badge">Original</span>
+            </div>
+          </div>
+
+          <div class="tirinha-card">
+            <div class="tirinha-panels">
+              <div class="tirinha-panel tirinha-panel--alt">
+                <div class="tirinha-fig">🤠</div>
+                <div class="tirinha-bubble">Peão, o que você vai almoçar?</div>
+              </div>
+              <div class="tirinha-panel">
+                <div class="tirinha-fig">🍲</div>
+                <div class="tirinha-bubble">Arroz com pequi, patrão!</div>
+              </div>
+              <div class="tirinha-panel tirinha-panel--alt2">
+                <div class="tirinha-fig">😮</div>
+                <div class="tirinha-bubble">Todo dia igual! — Todo dia bom!</div>
+              </div>
+            </div>
+            <div class="tirinha-meta">
+              <div>
+                <div class="tirinha-meta__title">Peão do Pantanal</div>
+                <div class="tirinha-meta__author">por Maria Cuiabá</div>
+              </div>
+              <span class="tirinha-badge">Original</span>
+            </div>
+          </div>
+
+          <div class="tirinha-card">
+            <div class="tirinha-panels">
+              <div class="tirinha-panel tirinha-panel--alt2">
+                <div class="tirinha-fig">🦜</div>
+                <div class="tirinha-bubble">Sabe quantas espécies vivem no Cerrado?</div>
+              </div>
+              <div class="tirinha-panel tirinha-panel--alt">
+                <div class="tirinha-fig">🤔</div>
+                <div class="tirinha-bubble">Umas 100?</div>
+              </div>
+              <div class="tirinha-panel">
+                <div class="tirinha-fig">🦜</div>
+                <div class="tirinha-bubble">Mais de 12.000! E você nem sai de casa…</div>
+              </div>
+            </div>
+            <div class="tirinha-meta">
+              <div>
+                <div class="tirinha-meta__title">Papo de Arara</div>
+                <div class="tirinha-meta__author">por Pedro Fruto</div>
+              </div>
+              <span class="tirinha-badge">Original</span>
+            </div>
+          </div>
+
+          <div class="tirinha-card">
+            <div class="tirinha-panels">
+              <div class="tirinha-panel">
+                <div class="tirinha-fig">🏙️</div>
+                <div class="tirinha-bubble">Brasília tem só 66 anos…</div>
+              </div>
+              <div class="tirinha-panel tirinha-panel--alt2">
+                <div class="tirinha-fig">😎</div>
+                <div class="tirinha-bubble">…e já é Patrimônio da Humanidade!</div>
+              </div>
+              <div class="tirinha-panel tirinha-panel--alt">
+                <div class="tirinha-fig">🏛️</div>
+                <div class="tirinha-bubble">Bom quando o futuro chega antes do passado.</div>
+              </div>
+            </div>
+            <div class="tirinha-meta">
+              <div>
+                <div class="tirinha-meta__title">Capital do Futuro</div>
+                <div class="tirinha-meta__author">por Lúcia Planalto</div>
+              </div>
+              <span class="tirinha-badge">Original</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 8. WIDGETS (Tempo + Câmbio) ========== -->
+    <div class="container">
+      <div class="widgets-row">
+
+        <div class="widget-box" id="tempo" aria-label="Previsão do tempo">
+          <div class="widget-title">
+            <i data-lucide="sun" style="width:16px;height:16px;"></i>
+            Previsão do Tempo — Centro-Oeste
+          </div>
+          <div class="weather-tabs" role="tablist">
+            <button class="weather-tab active" data-city="Cuiabá"       role="tab" aria-selected="true">Cuiabá</button>
+            <button class="weather-tab"        data-city="Campo Grande"  role="tab" aria-selected="false">Campo Grande</button>
+            <button class="weather-tab"        data-city="Goiânia"       role="tab" aria-selected="false">Goiânia</button>
+            <button class="weather-tab"        data-city="Brasília"      role="tab" aria-selected="false">Brasília</button>
+          </div>
+          <div id="weather-content" aria-live="polite"></div>
+        </div>
+
+        <div class="widget-box" id="cambio" aria-label="Cotação de moedas">
+          <div class="widget-title">
+            <i data-lucide="trending-up" style="width:16px;height:16px;"></i>
+            Cotação de Moedas
+          </div>
+          <div id="currency-content" aria-live="polite"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========== 9. CULTURA ========== -->
+    <div class="container" id="cultura">
+      <section aria-label="Cultura e Cerrado">
+        <div class="section-heading">
+          <span class="section-heading__title">Cultura &amp; Cerrado</span>
+          <div class="section-heading__rule"></div>
+          <a href="#" class="section-heading__more">Ver mais</a>
+        </div>
+        <div class="cultura-grid">
+          <article class="cultura-card">
+            <div class="cultura-card__img ph-1"></div>
+            <div class="cultura-card__overlay">
+              <span class="cultura-card__tag">Gastronomia</span>
+              <h3 class="cultura-card__title">Do pequi ao baru: guia dos frutos nativos que chegam aos melhores restaurantes</h3>
+            </div>
+          </article>
+          <article class="cultura-card">
+            <div class="cultura-card__img ph-4"></div>
+            <div class="cultura-card__overlay">
+              <span class="cultura-card__tag">Tradições</span>
+              <h3 class="cultura-card__title">Cavalhada de Pirenópolis: 200 anos de festa barroca no coração de Goiás</h3>
+            </div>
+          </article>
+          <article class="cultura-card">
+            <div class="cultura-card__img ph-5"></div>
+            <div class="cultura-card__overlay">
+              <span class="cultura-card__tag">Arte</span>
+              <h3 class="cultura-card__title">Artistas mato-grossenses expõem na Bienal de São Paulo pela primeira vez em 30 anos</h3>
+            </div>
+          </article>
+          <article class="cultura-card">
+            <div class="cultura-card__img ph-8"></div>
+            <div class="cultura-card__overlay">
+              <span class="cultura-card__tag">Pesca</span>
+              <h3 class="cultura-card__title">Festival do Peixe de Corumbá celebra 40 anos com recorde de competidores</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========== 10. AGRONEGÓCIO + SIDEBAR ========== -->
+    <div class="container" id="agro">
+      <div class="agro-layout">
+
+        <section class="agro-main" aria-label="Agronegócio">
+          <div class="section-heading">
+            <span class="section-heading__title">Agronegócio</span>
+            <div class="section-heading__rule"></div>
+            <a href="#" class="section-heading__more">Ver mais</a>
+          </div>
+          <article class="agro-hero">
+            <div class="agro-hero__img ph-8"></div>
+            <div class="agro-hero__body">
+              <span class="kicker">Grãos</span>
+              <h2 class="agro-hero__title">Safra 2025/26 do Centro-Oeste deve superar 180 milhões de toneladas, projeta Conab</h2>
+              <p class="agro-hero__lide">Mato Grosso lidera com 78 mt de soja e milho somados. Clima favorável no segundo semestre sustenta expectativa dos produtores e corretoras do agronegócio regional.</p>
+              <div class="news-card__meta">
+                <span class="byline">Letícia Duarte</span>
+                <span class="dateline">02 jun 2026 · 5 min</span>
+              </div>
+            </div>
+          </article>
+          <div class="agro-list">
+            <article class="agro-list__item">
+              <div class="agro-list__img ph-2"></div>
+              <div class="agro-list__body">
+                <span class="kicker">Pecuária</span>
+                <h3 class="agro-list__title">MS exporta 1,2 milhão de cabeças de gado para o Oriente Médio no primeiro trimestre</h3>
+                <p class="agro-list__lide">Frigoríficos de Campo Grande e Dourados ampliam capacidade para atender demanda externa crescente. Lorem ipsum dolor sit amet consectetur.</p>
+                <div class="news-card__meta">
+                  <span class="byline">Roberto Campos</span>
+                  <span class="dateline">01 jun 2026</span>
+                </div>
+              </div>
+            </article>
+            <article class="agro-list__item">
+              <div class="agro-list__img ph-5"></div>
+              <div class="agro-list__body">
+                <span class="kicker">Tecnologia Rural</span>
+                <h3 class="agro-list__title">Drones com IA mapeiam plantações em Sorriso e reduzem uso de defensivos em 30%</h3>
+                <p class="agro-list__lide">Startup goiana expande projeto piloto para 12 municípios do Mato Grosso após resultados expressivos na safra anterior.</p>
+                <div class="news-card__meta">
+                  <span class="byline">Ana Prestes</span>
+                  <span class="dateline">31 mai 2026</span>
+                </div>
+              </div>
+            </article>
+            <article class="agro-list__item">
+              <div class="agro-list__img ph-3"></div>
+              <div class="agro-list__body">
+                <span class="kicker">Irrigação</span>
+                <h3 class="agro-list__title">Goiás lidera investimento em irrigação e deve triplicar área plantada no Cerrado até 2030</h3>
+                <p class="agro-list__lide">Projeto estadual financia pivôs centrais em regiões com déficit hídrico histórico e aposta na fruticultura irrigada.</p>
+                <div class="news-card__meta">
+                  <span class="byline">Marcela Reis</span>
+                  <span class="dateline">30 mai 2026</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <aside class="sidebar" aria-label="Mais lidas e informações">
+
+          <div class="sidebar-widget">
+            <div class="section-heading" style="margin-bottom:var(--space-4);">
+              <span class="section-heading__title">Mais Lidas</span>
+              <div class="section-heading__rule"></div>
+            </div>
+            <ol class="most-read-list">
+              <li class="most-read__item">
+                <span class="most-read__num">01</span>
+                <div class="most-read__body">
+                  <span class="kicker" style="font-size:0.6rem;">Pantanal</span>
+                  <h4 class="most-read__title">Pantanal registra florescimento recorde após chuvas históricas do trimestre</h4>
+                  <span class="dateline">02 jun · 6 min</span>
+                </div>
+              </li>
+              <li class="most-read__item">
+                <span class="most-read__num">02</span>
+                <div class="most-read__body">
+                  <span class="kicker" style="font-size:0.6rem;">Política</span>
+                  <h4 class="most-read__title">Governo de Goiás anuncia pacote de R$ 2,4 bi para infraestrutura do interior</h4>
+                  <span class="dateline">02 jun · 4 min</span>
+                </div>
+              </li>
+              <li class="most-read__item">
+                <span class="most-read__num">03</span>
+                <div class="most-read__body">
+                  <span class="kicker" style="font-size:0.6rem;">Agronegócio</span>
+                  <h4 class="most-read__title">Safra 2025/26 deve superar 180 milhões de toneladas, projeta Conab</h4>
+                  <span class="dateline">02 jun · 5 min</span>
+                </div>
+              </li>
+              <li class="most-read__item">
+                <span class="most-read__num">04</span>
+                <div class="most-read__body">
+                  <span class="kicker" style="font-size:0.6rem;">Cultura</span>
+                  <h4 class="most-read__title">Cavalhada de Pirenópolis: 200 anos de festa barroca no coração de Goiás</h4>
+                  <span class="dateline">01 jun · 7 min</span>
+                </div>
+              </li>
+              <li class="most-read__item">
+                <span class="most-read__num">05</span>
+                <div class="most-read__body">
+                  <span class="kicker" style="font-size:0.6rem;">Brasília</span>
+                  <h4 class="most-read__title">Obras do Eixo Monumental têm prazo e orçamento revisados pelo GDF</h4>
+                  <span class="dateline">31 mai · 5 min</span>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="sidebar-widget sidebar-widget--dark">
+            <div class="section-heading" style="margin-bottom:var(--space-4);border-bottom-color:rgba(255,255,255,.2);">
+              <span class="section-heading__title" style="color:var(--dourado-baru);">Commodities</span>
+              <div class="section-heading__rule" style="background:rgba(255,255,255,.1);"></div>
+            </div>
+            <div class="commodities-list">
+              <div class="commodity-row">
+                <div class="commodity-info">
+                  <span class="commodity-name">Soja (sc 60kg)</span>
+                  <span class="commodity-exchange">B3 · MT</span>
+                </div>
+                <div class="commodity-right">
+                  <span class="commodity-value">R$ 148,20</span>
+                  <span class="currency-change currency-change--up">▲ 0,8%</span>
+                </div>
+              </div>
+              <div class="commodity-row">
+                <div class="commodity-info">
+                  <span class="commodity-name">Milho (sc 60kg)</span>
+                  <span class="commodity-exchange">B3 · GO</span>
+                </div>
+                <div class="commodity-right">
+                  <span class="commodity-value">R$ 62,40</span>
+                  <span class="currency-change currency-change--down">▼ 0,3%</span>
+                </div>
+              </div>
+              <div class="commodity-row">
+                <div class="commodity-info">
+                  <span class="commodity-name">Boi Gordo (arroba)</span>
+                  <span class="commodity-exchange">B3 · MS</span>
+                </div>
+                <div class="commodity-right">
+                  <span class="commodity-value">R$ 312,50</span>
+                  <span class="currency-change currency-change--up">▲ 1,2%</span>
+                </div>
+              </div>
+              <div class="commodity-row">
+                <div class="commodity-info">
+                  <span class="commodity-name">Algodão (arroba)</span>
+                  <span class="commodity-exchange">B3 · MT</span>
+                </div>
+                <div class="commodity-right">
+                  <span class="commodity-value">R$ 95,80</span>
+                  <span class="currency-change currency-change--up">▲ 0,5%</span>
+                </div>
+              </div>
+            </div>
+            <div class="widget-source" style="margin-top:var(--space-3);">Dados demonstrativos · B3</div>
+          </div>
+
+          <div class="sidebar-widget sidebar-widget--brand">
+            <div class="newsletter-icon">
+              <i data-lucide="mail" style="width:28px;height:28px;color:var(--dourado-baru);"></i>
+            </div>
+            <h3 class="newsletter-title">O Centro-Oeste no seu e-mail</h3>
+            <p class="newsletter-desc">Assine a newsletter do CerradoNews e receba as principais notícias da região toda manhã, antes de todo mundo.</p>
+            <div class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="seu@email.com" aria-label="Seu e-mail" />
+              <button class="newsletter-btn" type="button">Assinar</button>
+            </div>
+            <p class="newsletter-note">Gratuito. Cancele quando quiser.</p>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+    <!-- ========== 11. OPINIÃO ========== -->
+    <section id="opiniao" class="opiniao-section" aria-label="Opinião">
+      <div class="opiniao-inner container">
+        <div class="section-heading">
+          <span class="section-heading__title">Opinião</span>
+          <div class="section-heading__rule"></div>
+          <a href="#" class="section-heading__more">Ver colunistas</a>
+        </div>
+        <div class="opiniao-grid">
+          <article class="opiniao-card">
+            <div class="opiniao-avatar">MF</div>
+            <div class="opiniao-name">Marcos Figueiredo</div>
+            <div class="opiniao-role">Economista e professor da UnB</div>
+            <h3 class="opiniao-title">O agronegócio do Centro-Oeste pode ser sustentável sem perder competitividade</h3>
+            <p class="opiniao-excerpt">A dicotomia entre preservação e produção é falsa quando se analisam os dados dos últimos dez anos. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </article>
+          <article class="opiniao-card">
+            <div class="opiniao-avatar">JR</div>
+            <div class="opiniao-name">Juliana Ramos</div>
+            <div class="opiniao-role">Jornalista e escritora</div>
+            <h3 class="opiniao-title">O que a cultura Bororo nos ensina sobre viver em comunidade no século XXI</h3>
+            <p class="opiniao-excerpt">Há saberes ancestrais nos povos do Cerrado que deveriam guiar nossas políticas urbanas contemporâneas. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </article>
+          <article class="opiniao-card">
+            <div class="opiniao-avatar">TC</div>
+            <div class="opiniao-name">Tiago Cerqueira</div>
+            <div class="opiniao-role">Biólogo e pesquisador do IB-USP</div>
+            <h3 class="opiniao-title">Por que o Cerrado merece a mesma atenção que a Amazônia nas políticas públicas</h3>
+            <p class="opiniao-excerpt">O segundo maior bioma do Brasil segue sendo o mais ameaçado e o menos protegido do território nacional. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       12. FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand__logo"><em>Cerrado</em><strong>News</strong></div>
+          <p class="footer-brand__about">O jornal digital que representa a alma do Centro-Oeste brasileiro. Notícias, cultura, natureza e as histórias das pessoas que constroem essa região todos os dias com apuro e compromisso com a verdade.</p>
+          <div class="footer-social">
+            <button class="social-btn" aria-label="Facebook"><i data-lucide="facebook" style="width:16px;height:16px;"></i></button>
+            <button class="social-btn" aria-label="Twitter/X"><i data-lucide="twitter" style="width:16px;height:16px;"></i></button>
+            <button class="social-btn" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></button>
+            <button class="social-btn" aria-label="YouTube"><i data-lucide="youtube" style="width:16px;height:16px;"></i></button>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__title">Editorias</div>
+          <ul>
+            <li><a href="#">Notícias</a></li>
+            <li><a href="#">Política</a></li>
+            <li><a href="#">Agronegócio</a></li>
+            <li><a href="#">Meio Ambiente</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Esportes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__title">Regiões</div>
+          <ul>
+            <li><a href="#">Mato Grosso</a></li>
+            <li><a href="#">Mato Grosso do Sul</a></li>
+            <li><a href="#">Goiás</a></li>
+            <li><a href="#">Distrito Federal</a></li>
+            <li><a href="#">Pantanal</a></li>
+            <li><a href="#">Chapada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__title">Jornal</div>
+          <ul>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Redação</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Anuncie</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CerradoNews. Todos os direitos reservados.</span>
+        <span>Feito com cuidado no coração do Brasil · Centro-Oeste</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/currency.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

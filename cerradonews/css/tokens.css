@@ -1,0 +1,94 @@
+/* ============================================================
+   CerradoNews — tokens.css
+   Design tokens extraídos do Design System oficial.
+   Fonte: colors_and_type.css (Design System CerradoNews)
+   ============================================================ */
+
+:root {
+  /* ── Cores Primárias ───────────────────────────────────────── */
+  --verde-cerrado:    #35513B;  /* verde da vegetação nativa */
+  --verde-cerrado-2:  #2A4030;  /* hover / fundos escuros    */
+  --dourado-baru:     #BE8C32;  /* dourado premium do baru   */
+  --dourado-baru-2:   #A2741F;  /* dourado escuro / hover    */
+  --terra-vermelha:   #A4432B;  /* terra ocre / latossolo    */
+  --terra-vermelha-2: #88341F;  /* terra escura / hover      */
+
+  /* ── Cores Neutras (quentes) ──────────────────────────────── */
+  --areia:        #F6F1E7;  /* fundo — NUNCA branco puro  */
+  --areia-clara:  #FCFAF4;  /* superfícies / cards         */
+  --areia-escura: #ECE5D5;  /* fundos alternativos         */
+  --linha:        #E2DBCB;  /* hairlines e bordas          */
+  --fumaca:       #8B8579;  /* texto terciário / captions  */
+  --fumaca-2:     #6B665C;  /* texto secundário            */
+  --carvao:       #262320;  /* texto principal — NUNCA #000*/
+  --carvao-2:     #3A352F;  /* carvão suave                */
+
+  /* ── Cores de Status / Acento ─────────────────────────────── */
+  --destaque:     #2E6E86;  /* céu do cerrado — links/foco */
+  --destaque-bg:  #E4EEF1;
+  --alerta:       #C8851B;  /* âmbar                       */
+  --alerta-bg:    #F8EDD4;
+  --sucesso:      #4F7C3A;  /* verde fresco                */
+  --sucesso-bg:   #E6EEDD;
+  --erro:         #B23322;  /* vermelho — plantão/breaking */
+  --erro-bg:      #F6E0DB;
+
+  /* ── Semânticas ───────────────────────────────────────────── */
+  --bg:        var(--areia);
+  --surface:   var(--areia-clara);
+  --surface-2: var(--areia-escura);
+  --border:    var(--linha);
+  --fg1:       var(--carvao);
+  --fg2:       var(--fumaca-2);
+  --fg3:       var(--fumaca);
+  --link:      var(--destaque);
+  --brand:     var(--verde-cerrado);
+  --accent:    var(--dourado-baru);
+
+  /* ── Tipografia ───────────────────────────────────────────── */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body:    'Spectral', Georgia, serif;
+  --font-ui:      'Archivo', system-ui, -apple-system, sans-serif;
+
+  /* ── Escala tipográfica (major third sobre 18px) ──────────── */
+  --text-overline: 0.75rem;    /* 12px */
+  --text-caption:  0.8125rem;  /* 13px */
+  --text-label:    0.875rem;   /* 14px */
+  --text-body-sm:  0.9375rem;  /* 15px */
+  --text-body:     1.125rem;   /* 18px */
+  --text-lead:     1.375rem;   /* 22px */
+  --text-h6:       1.125rem;   /* 18px */
+  --text-h5:       1.375rem;   /* 22px */
+  --text-h4:       1.75rem;    /* 28px */
+  --text-h3:       2.25rem;    /* 36px */
+  --text-h2:       3rem;       /* 48px */
+  --text-h1:       4rem;       /* 64px */
+
+  /* ── Espaçamento (base 4px) ───────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ── Bordas e Raios ───────────────────────────────────────── */
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-pill: 999px;
+
+  /* ── Sombras (quentes e sutis) ────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(38,35,32,.06), 0 1px 1px rgba(38,35,32,.04);
+  --shadow-md: 0 4px 14px rgba(38,35,32,.10);
+  --shadow-lg: 0 12px 32px rgba(38,35,32,.16);
+
+  /* ── Layout ───────────────────────────────────────────────── */
+  --maxw:    1200px;
+  --col-gap: 24px;
+  --ease:    cubic-bezier(0.22, 0.61, 0.36, 1);
+}
